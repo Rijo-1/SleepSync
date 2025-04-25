@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracking - SleepSync</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Replace the navbar section -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-moon"></i>
+            SleepSync
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sleep-analysis.html">Sleep Cycle Analysis</a>
+            <a href="smart-reminders.html">Smart Reminders</a>
+            <a href="progress-tracking.html" class="active">Progress Tracking</a>
+        </div>
+        <div class="nav-controls">
+            <button id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="sign-in">Sign In</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="tracking-section">
+            <h1>Progress Tracking</h1>
+            <div class="tracking-container">
+                <div class="sleep-stats">
+                    <h2>Sleep Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Average Sleep Duration</h3>
+                                <p class="stat-value">7.5 hrs</p>
+                                <p class="stat-trend positive">↑ 0.5 hrs from last week</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Sleep Quality</h3>
+                                <p class="stat-value">85%</p>
+                                <p class="stat-trend positive">↑ 5% from last week</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Time in Bed</h3>
+                                <p class="stat-value">8.2 hrs</p>
+                                <p class="stat-trend neutral">← Same as last week</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sleep-charts">
+                    <h2>Sleep Patterns</h2>t-container">
+                        <div class="chart-card">
+                            <h3>Weekly Sleep Duration</h3>
+                            <canva
+                    <div class="chars id="weeklyChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Sleep Quality Trends</h3>
+                            <canvas id="qualityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="sleep-journal">
+                    <h2>Sleep Journal</h2>
+                    <div class="journal-entries">
+                        <div class="journal-card">
+                            <div class="journal-date">Today</div>
+                            <div class="journal-content">
+                                <div class="mood-rating">
+                                    <i class="fas fa-smile"></i>
+                                    <span>Well Rested</span>
+                                </div>
+                                <p>Slept well after following the recommended bedtime routine.</p>
+                            </div>
+                        </div>
+                        <!-- More journal entries -->
+                    </div>
+                    <button class="add-entry-btn">
+                        <i class="fas fa-plus"></i> Add Journal Entry
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SleepSync. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/progress-tracking.js"></script>
+</body>
+</html>

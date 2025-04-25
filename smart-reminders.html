@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Reminders - SleepSync</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Replace the navbar section -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-moon"></i>
+            SleepSync
+        </div>
+        <div class="nav-links">
+            <a href="sleep-analysis.html">Sleep Cycle Analysis</a>
+            <a href="smart-reminders.html">Smart Reminders</a>
+            <a href="progress-tracking.html">Progress Tracking</a>
+        </div>
+        <div class="nav-controls">
+            <button id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="sign-in">Sign In</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="reminders-section">
+            <h1>Smart Reminders</h1>
+            <div class="reminders-container">
+                <div class="reminder-setup">
+                    <h2>Set Your Sleep Schedule</h2>
+                    <div class="schedule-form">
+                        <div class="input-group">
+                            <label>Weekday Schedule</label>
+                            <div class="time-inputs">
+                                <div class="time-input">
+                                    <i class="fas fa-moon"></i>
+                                    <input type="time" id="weekday-bedtime" placeholder="Bedtime">
+                                </div>
+                                <div class="time-input">
+                                    <i class="fas fa-sun"></i>
+                                    <input type="time" id="weekday-waketime" placeholder="Wake time">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Weekend Schedule</label>
+                            <div class="time-inputs">
+                                <div class="time-input">
+                                    <i class="fas fa-moon"></i>
+                                    <input type="time" id="weekend-bedtime" placeholder="Bedtime">
+                                </div>
+                                <div class="time-input">
+                                    <i class="fas fa-sun"></i>
+                                    <input type="time" id="weekend-waketime" placeholder="Wake time">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="save-schedule">Save Schedule</button>
+                    </div>
+                </div>
+                <div class="reminder-preferences">
+                    <h2>Reminder Settings</h2>
+                    <div class="preferences-grid">
+                        <div class="preference-card">
+                            <div class="preference-header">
+                                <i class="fas fa-bell"></i>
+                                <h3>Bedtime Reminder</h3>
+                            </div>
+                            <div class="preference-content">
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <select class="reminder-time">
+                                    <option value="15">15 minutes before</option>
+                                    <option value="30">30 minutes before</option>
+                                    <option value="45">45 minutes before</option>
+                                    <option value="60">1 hour before</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="preference-card">
+                            <div class="preference-header">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Device Wind Down</h3>
+                            </div>
+                            <div class="preference-content">
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                                <select class="reminder-time">
+                                    <option value="30">30 minutes before</option>
+                                    <option value="60">1 hour before</option>
+                                    <option value="90">1.5 hours before</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SleepSync. All rights reserved.</p>
+    </footer>
+
+    <script src="js/smart-reminders.js"></script>
+</body>
+</html>

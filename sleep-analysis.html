@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Cycle Analysis - SleepSync</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Replace the navbar section -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-moon"></i>
+                SleepSync
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="sleep-analysis.html">Sleep Cycle Analysis</a>
+            <a href="smart-reminders.html">Smart Reminders</a>
+            <a href="progress-tracking.html">Progress Tracking</a>
+        </div>
+        <div class="nav-controls">
+            <button id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="sign-in">Sign In</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="analysis-section">
+            <h1>Sleep Cycle Analysis</h1>
+            <div class="analysis-container">
+                <div class="sleep-cycle-calculator">
+                    <h2>Calculate Your Sleep Cycles</h2>
+                    <!-- Inside the calculator-form div -->
+                    <div class="calculator-form">
+                        <div class="mode-toggle">
+                            <button class="mode-btn active" data-mode="bedtime">I'm going to bed at...</button>
+                            <button class="mode-btn" data-mode="waketime">I want to wake up at...</button>
+                        </div>
+                        <div class="input-group" id="bedtime-input">
+                            <label for="bedtime">Bedtime</label>
+                            <input type="time" id="bedtime">
+                        </div>
+                        <div class="input-group hidden" id="waketime-input">
+                            <label for="waketime">Wake Time</label>
+                            <input type="time" id="waketime">
+                        </div>
+                        <div class="input-group">
+                            <label for="cycles">Number of Sleep Cycles (4-6 recommended)</label>
+                            <input type="number" id="cycles" min="3" max="6" value="5">
+                        </div>
+                        <button class="calculate-btn">Calculate Sleep Schedule</button>
+                    </div>
+                    <div id="cycle-results" class="results">
+                        <div class="sleep-score-container hidden">
+                            <div class="sleep-score">
+                                <svg class="progress-ring" width="120" height="120">
+                                    <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                                </svg>
+                                <div class="sleep-score-text">
+                                    <span class="score">0</span>
+                                    <span class="label">Sleep Score</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cycle-info">
+                    <h2>Understanding Sleep Cycles</h2>
+                    <div class="cycle-stages">
+                        <div class="stage-card">
+                            <div class="stage-header">
+                                <i class="fas fa-bed"></i>
+                                <h3>Stage 1: Light Sleep</h3>
+                            </div>
+                            <p>The transitional phase between wakefulness and sleep. Your muscles relax and your brain produces alpha and theta waves.</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-header">
+                                <i class="fas fa-wave-square"></i>
+                                <h3>Stage 2: True Sleep</h3>
+                            </div>
+                            <p>Your brain produces sudden increases in wave frequency called sleep spindles. Body temperature drops and heart rate slows.</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-header">
+                                <i class="fas fa-moon"></i>
+                                <h3>Stage 3: Deep Sleep</h3>
+                            </div>
+                            <p>Delta waves begin. This stage is crucial for physical recovery, immune system strengthening, and growth.</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-header">
+                                <i class="fas fa-eye"></i>
+                                <h3>REM Sleep</h3>
+                            </div>
+                            <p>Brain activity similar to wakefulness. Dreams occur, muscles are paralyzed, and memory consolidation happens.</p>
+                        </div>
+                    </div>
+                    <div class="cycle-diagram">
+                        <h3>Complete Sleep Cycle: 90-110 Minutes</h3>
+                        <div class="cycle-visual">
+                            <canvas id="cycleChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2>Tips for Better Sleep</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Consistent Schedule</h3>
+                    <p>Go to bed and wake up at the same time every day, even on weekends.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-temperature-low"></i>
+                    <h3>Optimal Temperature</h3>
+                    <p>Keep your bedroom between 60-67°F (15-19°C) for optimal sleep.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-mobile-slash"></i>
+                    <h3>Digital Sunset</h3>
+                    <p>Avoid blue light from devices at least 1 hour before bedtime.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SleepSync. All rights reserved.</p>
+    </footer>
+
+    <script src="js/sleep-analysis.js"></script>
+</body>
+</html>
