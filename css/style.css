@@ -887,6 +887,527 @@ canvas {
     gap: 1rem;
 }
 
+.enhanced-journal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.journal-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    border-radius: 18px;
+    margin-bottom: 0;
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    border: 2px solid transparent;
+    animation: fadeIn 0.5s;
+}
+.journal-card:hover {
+    box-shadow: 0 8px 24px rgba(124,58,237,0.10);
+    border-color: var(--primary-color);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.journal-date {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.journal-content {
+    margin-bottom: 0.5rem;
+}
+
+.mood-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.mood-selector {
+    position: relative;
+    cursor: pointer;
+    min-width: 160px;
+}
+
+.selected-mood {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem 0.5rem 1rem;
+    border-radius: 20px;
+    background: var(--bg-primary);
+    border: 1.5px solid var(--primary-color);
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: background 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px rgba(124,58,237,0.05);
+}
+.selected-mood:hover {
+    background: var(--bg-secondary);
+    border-color: var(--secondary-color);
+}
+
+.mood-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 210px;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-top: 0.3rem;
+    display: none;
+    z-index: 10;
+    border: 1.5px solid var(--primary-color);
+    padding: 0.2rem 0;
+    animation: fadeIn 0.2s;
+}
+.mood-dropdown.show {
+    display: block;
+}
+
+.mood-option {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+.mood-option:hover {
+    background: var(--bg-secondary);
+}
+
+.mood-emoji {
+    font-size: 1.3rem;
+}
+
+.mood-text {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.enhanced-add-entry {
+    width: 100%;
+    padding: 1.1rem;
+    margin-top: 1.2rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(124,58,237,0.07);
+}
+.enhanced-add-entry:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px) scale(1.01);
+}
+.add-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.delete-entry {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 2;
+}
+.delete-entry:hover {
+    color: #EF4444;
+    transform: scale(1.15);
+}
+
+.journal-card textarea {
+    width: 100%;
+    min-height: 60px;
+    border-radius: 10px;
+    border: 1.5px solid var(--primary-color);
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    resize: vertical;
+    transition: border 0.2s;
+}
+.journal-card textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.journal-card p {
+    margin: 0.3rem 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+@media (max-width: 600px) {
+    .journal-card {
+        padding: 1rem 0.7rem 0.7rem 0.7rem;
+    }
+    .enhanced-add-entry {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    .mood-dropdown {
+        width: 98vw;
+        left: -10vw;
+    }
+}
+
+/* Smart Reminders Styles */
+.reminders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.time-input {
+    flex: 1;
+    position: relative;
+}
+
+.time-input i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+.time-input input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem;
+}
+
+.preferences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.preference-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.preference-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.preference-header i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.preference-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mode-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Sleep Score */
+.sleep-score-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.sleep-score {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-ring-circle {
+    stroke: var(--primary-color);
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+.sleep-score-text {
+    position: absolute;
+    text-align: center;
+}
+
+.sleep-score-text .score {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.sleep-score-text .label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.summary-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.hidden {
+    display: none;
+}
+
+.time-input input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem;
+}
+
+.preferences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.preference-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.preference-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.preference-header i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.preference-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Toggle Switch */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Progress Tracking Styles */
+.tracking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.stat-info h3 {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.stat-trend {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.stat-trend.positive {
+    color: #10B981;
+}
+
+.stat-trend.negative {
+    color: #EF4444;
+}
+
+.stat-trend.neutral {
+    color: var(--text-secondary);
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Add these styles for the charts */
+.chart-card {
+    height: 300px;
+    position: relative;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-container {
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.chart-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.chart-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.journal-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .journal-card {
     background: var(--bg-secondary);
     padding: 1.5rem;
